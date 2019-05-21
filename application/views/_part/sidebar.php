@@ -11,18 +11,13 @@
             <a href="#admin" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-user"></i> Menu Admin</a>
             <ul class="collapse list-unstyled" id="admin">
                 <li>
-                    <a href="#">> User</a>
+                    <a href="#">> Admin</a>
                 </li>
                 <li>
-                    <a href="#">> List Departemen</a>
+                    <a href="#">> Staff IT</a>
                 </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-money-check"></i> Pengajuan</a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="#">> Design</a>
+                    <a href="#">> HRD</a>
                 </li>
             </ul>
         </li>
@@ -34,6 +29,9 @@
             <ul class="collapse list-unstyled" id="itSubMenu">
                 <li>
                     <a href="#">> Penanganan Komputer</a>
+                </li>
+                <li>
+                    <a href="#">> Pengajuan Design</a>
                 </li>
             </ul>
         </li>

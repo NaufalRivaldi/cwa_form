@@ -6,7 +6,7 @@ class Home extends CI_Controller {
 		parent::__construct();
 
 		// model
-		$this->load->model('user_model');
+		$this->load->model('admin_model');
 	}
 
 	public function index(){
@@ -14,11 +14,16 @@ class Home extends CI_Controller {
 	}
 
 	public function dashboard(){
+		$this->admin_model->cekLogin();
 		$this->load->view('dashboard');
 	}
 
 	// login
 	public function login(){
-		
+		$this->admin_model->login();
+	}
+
+	public function logout(){
+		$this->admin_model->logout();
 	}
 }

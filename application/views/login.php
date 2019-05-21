@@ -15,12 +15,12 @@
                 </center><br>
                 <h3>Login E - Form CWJA</h3>
                 <hr>
-                <form action="<?= site_url('user/login') ?>" method="POST">
+                <form action="<?= site_url('home/login') ?>" method="POST">
                     <div class="form-group">
                         <input type="text" name="username" class="form-control" placeholder="Username">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="pwd" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Login" class="btn btn-primary btn-block">
