@@ -11,13 +11,13 @@
             <a href="#admin" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-user"></i> Menu Admin</a>
             <ul class="collapse list-unstyled" id="admin">
                 <li>
-                    <a href="#">> Admin</a>
+                    <a href="<?= base_url('admin/') ?>">> Admin</a>
                 </li>
                 <li>
-                    <a href="#">> Staff IT</a>
+                    <a href="<? base_url('') ?>">> Staff IT</a>
                 </li>
                 <li>
-                    <a href="#">> HRD</a>
+                    <a href="hrd">> HRD</a>
                 </li>
             </ul>
         </li>

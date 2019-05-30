@@ -9,6 +9,7 @@ class Admin_model extends CI_Model {
     public $nama;
     public $dep;
     public $stat;
+    public $token = 0;
 
     public function rules(){
         return [
@@ -40,6 +41,23 @@ class Admin_model extends CI_Model {
         ];
     }
 
+    public function showData(){
+        return $this->db->get($this->_table)->result();
+    }
+
+    public function save(){
+        $post = $this->input->post();
+
+        $this->username = $post['username'];
+        $this->password = $post['password'];
+        $this->nama = $post['nama'];
+        $this->dep = $post['dep'];
+        $this->stat = $post['stat'];
+
+        return $this->db->insert($this->_table, $this);
+    }
+
+    // Fungsi login sistem
     public function login(){
         $post = $this->input->post();
         
