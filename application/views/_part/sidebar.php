@@ -7,20 +7,22 @@
         <li>
             <a href="<?= site_url('home/dashboard') ?>"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         </li>
+        <?php if($this->session->userdata('level') == '1'): ?>
         <li>
             <a href="#admin" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-user"></i> Menu Admin</a>
             <ul class="collapse list-unstyled" id="admin">
                 <li>
-                    <a href="<?= base_url('admin/') ?>">> Admin</a>
+                    <a href="<?= site_url('admin/') ?>">> Admin</a>
                 </li>
                 <li>
-                    <a href="<? base_url('') ?>">> Staff IT</a>
+                    <a href="<?= site_url('staffit/') ?>">> Staff IT</a>
                 </li>
                 <li>
-                    <a href="hrd">> HRD</a>
+                    <a href="<?= site_url('hrd/') ?>">> HRD</a>
                 </li>
             </ul>
         </li>
+        <?php endif ?>
         <li>
             <a href="#"><i class="fas fa-file"></i> Form HRD</a>
         </li>

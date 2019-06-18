@@ -1,11 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Controller {
+class Staffit extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 
 		// model
+		$this->load->model('staffit_model');
 		$this->load->model('admin_model');
 
 		// library
@@ -16,41 +17,41 @@ class Admin extends CI_Controller {
 	}
 
 	public function index(){
-		$data['admin'] = $this->admin_model->showData();
-		$this->load->view('admin/index', $data);
+		$data['staffit'] = $this->staffit_model->showData();
+		$this->load->view('staffit/index', $data);
 	}
 
 	public function add(){
-		$admin = $this->admin_model;
+		$staffit = $this->staffit_model;
 		$val = $this->form_validation;
-		$val->set_rules($admin->rules());
+		$val->set_rules($staffit->rules());
 
 		if($val->run()){
-			$admin->save();
-			redirect('admin/');
+			$staffit->save();
+			redirect('staffit/');
 		}
 
 		$data['dep'] = $this->helper->departemen();
-		$this->load->view('admin/form', $data);
+		$this->load->view('staffit/form', $data);
 	}
 
 	public function edit($id=null){
-		$admin = $this->admin_model;
+		$staffit = $this->staffit_model;
 		$val = $this->form_validation;
-		$val->set_rules($admin->rulesEdit());
+		$val->set_rules($staffit->rules());
 
 		if($val->run()){
-			$admin->update();
-			redirect('admin/');
+			$staffit->update();
+			redirect('staffit/');
 		}
 
-		$data['admin'] = $this->admin_model->getById($id);
+		$data['staffit'] = $this->staffit_model->getById($id);
 		$data['dep'] = $this->helper->departemen();
-		$this->load->view('admin/edit', $data);
+		$this->load->view('staffit/edit', $data);
 	}
 
 	public function delete($id){
-		$this->admin_model->delete($id);
-		redirect('admin/');
+		$this->staffit_model->delete($id);
+		redirect('staffit/');
 	}
 }
