@@ -24,7 +24,7 @@
         </li>
         <?php endif ?>
         <li>
-            <a href="#"><i class="fas fa-file"></i> Form HRD</a>
+            <a href="<?= site_url('formhrd/') ?>"><i class="fas fa-file"></i> Form HRD</a>
         </li>
         <li>
             <a href="#itSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-file"></i> Form IT</a>
