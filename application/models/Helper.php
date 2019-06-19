@@ -43,4 +43,20 @@ class Helper extends CI_Model {
 
         return $data;
     }
+
+    // ketgori form HRD
+    public function kategori(){
+        $data = array(
+            "1" => "Terlambat",
+            "2" => "Dinas Keluar",
+            "3" => "Izin Tidak Masuk Kerja",
+            "4" => "Tidak Absen",
+            "5" => "Pelanggaran",
+            "6" => "Izin Keluar / Pulang",
+            "7" => "Lembur",
+            "8" => "Lainnya"
+        );
+
+        return $data;
+    }
 }

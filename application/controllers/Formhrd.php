@@ -32,6 +32,7 @@ class Formhrd extends CI_Controller {
 		}
 
 		$data['dep'] = $this->helper->departemen();
+		$data['kategori'] = $this->helper->kategori();
 		$this->load->view('formhrd/form', $data);
 	}
 

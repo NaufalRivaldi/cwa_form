@@ -36,7 +36,15 @@
                             Form HRD
                         </h5>
                         <div class="card-body">
-                            <form action="<?= base_url('hrd/add') ?>" method="POST">
+                            <form action="<?= base_url('formhrd/add') ?>" method="POST">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Kategori</label>
+                                    <div class="col-sm-9">
+                                        <?php foreach($kategori as $a => $b): ?>
+                                        <input type="checkbox" name="kategori[]" value="<?= $a ?>"> <?= $b ?> <br>
+                                        <?php endforeach ?>
+                                    </div>
+                                </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Nama</label>
                                     <div class="col-sm-9">
@@ -44,18 +52,42 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Jabatan</label>
+                                    <label class="col-sm-3 col-form-label">NIK</label>
                                     <div class="col-sm-9">
-                                        <select name="jabatan" id="jabatan" class="form-control col-6">
-                                            <option value="kabag">Kepala Bagian</option>
-                                            <option value="staff">Staff</option>
-                                        </select>
+                                    <input type="text" class="form-control col-4" id="nik" name="nik">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Tanggal</label>
+                                    <div class="col-sm-4">
+                                        <input type="date" class="form-control" id="tgl_a" name="tgl_a">
+                                    </div>
+                                    <label class="col-sm-1 col-form-label">s/d</label>
+                                    <div class="col-sm-4">
+                                        <input type="date" class="form-control" id="tgl_b" name="tgl_b">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Waktu(*)</label>
+                                    <div class="col-sm-4">
+                                        <input type="time" class="form-control" id="waktu_a" name="waktu_a">
+                                        <p class="text-warning">*Menggunakan Format 24 Jam</p>
+                                    </div>
+                                    <label class="col-sm-1 col-form-label">s/d</label>
+                                    <div class="col-sm-4">
+                                        <input type="time" class="form-control" id="waktu_b" name="waktu_b">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Keterangan</label>
+                                    <div class="col-sm-9">
+                                        <textarea name="keterangan" id="" rows="5" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input type="submit" name="btn" value="Simpan" class="btn btn-primary">
+                                        <input type="submit" name="btn" value="Ajukan" class="btn btn-primary">
                                     </div>
                                 </div>
                             </form>
