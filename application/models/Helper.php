@@ -59,4 +59,26 @@ class Helper extends CI_Model {
 
         return $data;
     }
+
+    public function setKategori($data){
+        $data = explode(',', $data);
+        $count = count($data);
+        $text = "";
+        for($i=0; $i<$count-1; $i++){
+            $kategori = $this->kategori();
+            foreach($kategori as $a => $b){
+                if($data[$i] == $a){
+                    $text = $text."<li>".$b."</li>";
+                }
+            }
+        }
+
+        echo "<ul>".$text."</ul>";
+    }
+
+    public function tglFormat($tgl){
+        return date('d F Y', strtotime($tgl));
+    }
+
+    
 }

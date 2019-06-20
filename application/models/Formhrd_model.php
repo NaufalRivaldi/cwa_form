@@ -59,7 +59,11 @@ class Formhrd_model extends CI_Model {
     }
 
     public function showData(){
-        return $this->db->get($this->_table)->result();
+        $this->db->select('id_form, kategori, tb_form_hrd.nama, nik, dep, tgl_a, tgl_b, waktu_a, waktu_b, keterangan, tb_form_hrd.stat, tb_hrd.nama as nama_hrd');
+        $this->db->from('tb_form_hrd');
+        $this->db->join('tb_admin', 'tb_admin.id_user = tb_form_hrd.id_user', 'LEFT');
+        $this->db->join('tb_hrd', 'tb_hrd.id_hrd = tb_form_hrd.id_hrd', 'LEFT');
+        return $this->db->order_by('id_form', 'desc')->get()->result();
     }
 
     public function getById($id){
