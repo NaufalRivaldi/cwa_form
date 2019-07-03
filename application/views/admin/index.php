@@ -47,23 +47,23 @@
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
+                                <tbody>
                                 <?php if(!empty($admin)): ?>
                                     <?php foreach($admin as $row): ?>
-                                        <tbody>
-                                            <tr>
-                                                <td><?= $no++; ?></td>
-                                                <td><?= $row->username ?></td>
-                                                <td><?= $row->nama ?></td>
-                                                <td><?= $row->dep ?></td>
-                                                <td><?= $this->helper->level($row->stat) ?></td>
-                                                <td>
-                                                    <a href="<?= site_url('admin/edit/'.$row->id_user) ?>"><i class="fas fa-cog text-success"></i></a> | 
-                                                    <?= ($this->session->userdata('username') != $row->username) ? '<a href="'.site_url('admin/delete/'.$row->id_user).'" onclick="return confirm(\'Ingin menghapus data?\')"><i class="fas fa-trash text-danger"></i></a>' : '' ?>
-                                                </td>
-                                            </tr>
-                                        </tbody>
+                                        <tr>
+                                            <td><?= $no++; ?></td>
+                                            <td><?= $row->username ?></td>
+                                            <td><?= $row->nama ?></td>
+                                            <td><?= $row->dep ?></td>
+                                            <td><?= $this->helper->level($row->stat) ?></td>
+                                            <td>
+                                                <a href="<?= site_url('admin/edit/'.$row->id_user) ?>"><i class="fas fa-cog text-success"></i></a> | 
+                                                <?= ($this->session->userdata('username') != $row->username) ? '<a href="'.site_url('admin/delete/'.$row->id_user).'" onclick="return confirm(\'Ingin menghapus data?\')"><i class="fas fa-trash text-danger"></i></a>' : '' ?>
+                                            </td>
+                                        </tr>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
+                                </tbody>
                             </table>
                         </div>
                     </div>

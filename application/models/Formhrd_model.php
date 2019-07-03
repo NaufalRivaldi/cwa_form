@@ -67,7 +67,11 @@ class Formhrd_model extends CI_Model {
     }
 
     public function getById($id){
-        return $this->db->where('id_hrd', $id)->get($this->_table)->row();
+        $this->db->select('id_form, kategori, tb_form_hrd.nama, nik, dep, tgl_a, tgl_b, waktu_a, waktu_b, keterangan, tb_form_hrd.stat, tb_hrd.nama as nama_hrd');
+        $this->db->from('tb_form_hrd');
+        $this->db->join('tb_admin', 'tb_admin.id_user = tb_form_hrd.id_user', 'LEFT');
+        $this->db->join('tb_hrd', 'tb_hrd.id_hrd = tb_form_hrd.id_hrd', 'LEFT');
+        return $this->db->where('id_form', $id)->get()->row();
     }
 
     public function save(){
@@ -109,15 +113,15 @@ class Formhrd_model extends CI_Model {
     public function update(){
         $post = $this->input->post();
 
-        $id = $post['id_hrd'];
+        $id = $post['id_form'];
         $this->nama = $post['nama'];
         $this->jabatan = $post['jabatan'];
 
-        return $this->db->where('id_hrd', $id)->update($this->_table, $this);
+        return $this->db->where('id_form', $id)->update($this->_table, $this);
     }
 
     public function delete($id){
-        return $this->db->where('id_hrd', $id)->delete($this->_table);
+        return $this->db->where('id_form', $id)->delete($this->_table);
     }
 
     // fungsi tambahan

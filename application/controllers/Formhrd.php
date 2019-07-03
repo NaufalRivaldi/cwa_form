@@ -21,6 +21,11 @@ class Formhrd extends CI_Controller {
 		$this->load->view('formhrd/index', $data);
 	}
 
+	public function showform($id){
+		$data['formhrd'] = $this->formhrd_model->getById($id);
+		$this->load->view('formhrd/show', $data);
+	}
+
 	public function add(){
 		$formhrd = $this->formhrd_model;
 		$val = $this->form_validation;

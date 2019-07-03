@@ -45,21 +45,21 @@
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
+                                <tbody>
                                 <?php if(!empty($staffit)): ?>
                                     <?php foreach($staffit as $row): ?>
-                                        <tbody>
-                                            <tr>
-                                                <td><?= $no++; ?></td>
-                                                <td><?= $row->nama ?></td>
-                                                <td><?= $row->jabatan ?></td>
-                                                <td>
-                                                    <a href="<?= site_url('staffit/edit/'.$row->id_staff) ?>"><i class="fas fa-cog text-success"></i></a> | 
-                                                    <a href="<?= site_url('staffit/delete/'.$row->id_staff) ?>" onclick="return confirm('Ingin menghapus data?')"><i class="fas fa-trash text-danger"></i></a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
+                                        <tr>
+                                            <td><?= $no++; ?></td>
+                                            <td><?= $row->nama ?></td>
+                                            <td><?= $row->jabatan ?></td>
+                                            <td>
+                                                <a href="<?= site_url('staffit/edit/'.$row->id_staff) ?>"><i class="fas fa-cog text-success"></i></a> | 
+                                                <a href="<?= site_url('staffit/delete/'.$row->id_staff) ?>" onclick="return confirm('Ingin menghapus data?')"><i class="fas fa-trash text-danger"></i></a>
+                                            </td>
+                                        </tr>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
+                                </tbody>
                             </table>
                         </div>
                     </div>

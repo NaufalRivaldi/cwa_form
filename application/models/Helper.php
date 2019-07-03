@@ -73,12 +73,22 @@ class Helper extends CI_Model {
             }
         }
 
-        echo "<ul>".$text."</ul>";
+        echo $text;
     }
 
     public function tglFormat($tgl){
         return date('d F Y', strtotime($tgl));
     }
 
-    
+    public function status($id){
+        $stat = "";
+        if($id == 1){
+            $stat = "Proses";
+        }
+        if($id == 2){
+            $stat = "ACC";
+        }
+
+        return $stat;
+    }
 }
